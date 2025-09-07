@@ -83,28 +83,13 @@ int main() {
 
 ```
 Enter the number of routers: 4
-
-Enter source router (-1 to stop): 1
-Enter destination router: 2
-Enter the cost: 3
-
-Enter source router (-1 to stop): 1
-Enter destination router: 3
-Enter the cost: 7
-
-Enter source router (-1 to stop): 2
-Enter destination router: 3
-Enter the cost: 1
-
-Enter source router (-1 to stop): 2
-Enter destination router: 4
-Enter the cost: 2
-
-Enter source router (-1 to stop): 3
-Enter destination router: 4
-Enter the cost: 2
-
-Enter source router (-1 to stop): -1
+Enter the number of links: 5
+Enter each link in the format <source> <destination> <cost>
+Link 1: 1 2 3
+Link 2: 1 3 7
+Link 3: 2 3 1
+Link 4: 2 4 2
+Link 5: 3 4 2
 
 Routing table for Router 1:
 To 2 via 2 with cost 3
