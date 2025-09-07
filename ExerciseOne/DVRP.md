@@ -86,3 +86,50 @@ int main() {
 
 ```
 # Output
+
+```
+Enter the number of routers: 4
+
+Enter source router (-1 to stop): 1
+Enter destination router: 2
+Enter the cost: 3
+
+Enter source router (-1 to stop): 1
+Enter destination router: 3
+Enter the cost: 7
+
+Enter source router (-1 to stop): 2
+Enter destination router: 3
+Enter the cost: 1
+
+Enter source router (-1 to stop): 2
+Enter destination router: 4
+Enter the cost: 2
+
+Enter source router (-1 to stop): 3
+Enter destination router: 4
+Enter the cost: 2
+
+Enter source router (-1 to stop): -1
+
+Routing table for Router 1:
+To 2 via 2 with cost 3
+To 3 via 2 with cost 4
+To 4 via 2 with cost 5
+
+Routing table for Router 2:
+To 1 via 1 with cost 3
+To 3 via 3 with cost 1
+To 4 via 4 with cost 2
+
+Routing table for Router 3:
+To 1 via 2 with cost 4
+To 2 via 2 with cost 1
+To 4 via 4 with cost 2
+
+Routing table for Router 4:
+To 1 via 2 with cost 5
+To 2 via 2 with cost 2
+To 3 via 3 with cost 2
+
+```
