@@ -2,14 +2,14 @@
 
 ```
 #include <bits/stdc++.h>
-#define INF 1000
 using namespace std;
+
+#define INF 1000
 
 class Router {
 public:
     vector<int> distance;
     vector<int> from;
-
     Router(int n) {
         distance.resize(n, INF);
         from.resize(n, -1);
@@ -17,7 +17,7 @@ public:
 };
 
 int main() {
-    int number_of_routers;
+    int number_of_routers, number_of_links;
     cout << "Enter the number of routers: ";
     cin >> number_of_routers;
 
@@ -33,25 +33,19 @@ int main() {
         cost_matrix[i][i] = 0;
     }
 
-    int u, v, w;
-    while (true) {
-        cout << "\nEnter source router (-1 to stop): ";
-        cin >> u;
-        if (u == -1) break;
+    cout << "Enter the number of links: ";
+    cin >> number_of_links;
 
-        cout << "Enter destination router: ";
-        cin >> v;
-        cout << "Enter the cost: ";
-        cin >> w;
-
-        // convert to 0-based index
+    cout << "Enter each link in the format <source> <destination> <cost>\n";
+    for (int i = 0; i < number_of_links; i++) {
+        int u, v, w;
+        cout << "Link " << i + 1 << ": ";
+        cin >> u >> v >> w;
         u--; v--;
-
         routers[u].distance[v] = w;
         routers[v].distance[u] = w;
         routers[u].from[v] = v;
         routers[v].from[u] = u;
-
         cost_matrix[u][v] = w;
         cost_matrix[v][u] = w;
     }
@@ -80,9 +74,9 @@ int main() {
                  << " with cost " << routers[i].distance[j] << "\n";
         }
     }
-
     return 0;
 }
+
 
 ```
 # Output
