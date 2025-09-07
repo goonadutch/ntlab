@@ -1,6 +1,7 @@
 # Code
 
-```#include <bits/stdc++.h>
+```
+#include <bits/stdc++.h>
 #define INF 1000
 using namespace std;
 
