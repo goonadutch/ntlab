@@ -1,7 +1,8 @@
 # Code :
 
 ```
-#include <bits/stdc++.h>
+#include <iostream>
+#include <algorithm>
 using namespace std;
 
 int main() {
@@ -20,24 +21,39 @@ int main() {
         cout << "\nEnter packet size for time " << t << ": ";
         cin >> pkt;
 
-        // incoming packets
+        cout << "Time " << t << ":\n";
+
+        // Incoming packet handling && packet loss
         if (storage + pkt > bucket_size) {
             int dropped = (storage + pkt) - bucket_size;
             storage = bucket_size;
             cout << "  Packet loss = " << dropped << "\n";
         } else {
             storage += pkt;
+            cout << "  Packet accepted\n";
         }
 
         cout << "  Buffer before leak = " << storage << "\n";
 
-        // leak at constant rate
+        // Leak at constant rate
         int leaked = min(storage, output_rate);
         storage -= leaked;
 
-        cout << "  Leaked = " << leaked
-             << ", Remaining = " << storage << "\n";
+        cout << "  Leaked = " << leaked << ", Remaining = " << storage << "\n";
     }
+
+    // Drain remaining packets after last input
+    int time = n;
+    while (storage > 0) {
+        time++;
+        int leaked = min(storage, output_rate);
+        storage -= leaked;
+        cout << "\nTime " << time << ":\n";
+        cout << "  No new packets\n";
+        cout << "  Leaked = " << leaked << ", Remaining = " << storage << "\n";
+    }
+
+    return 0;
 }
 
 ```
