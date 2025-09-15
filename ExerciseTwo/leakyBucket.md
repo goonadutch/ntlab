@@ -66,22 +66,40 @@ Enter output rate: 3
 Enter number of packets: 4
 
 Enter packet size for time 1: 4
+Time 1:
+  Packet accepted
   Buffer before leak = 4
   Leaked = 3, Remaining = 1
 
-Enter packet size for time 2: 6
-  Buffer before leak = 7
+Enter packet size for time 2: 4
+Time 2:
+  Packet accepted
+  Buffer before leak = 5
+  Leaked = 3, Remaining = 2
+
+Enter packet size for time 3: 9
+Time 3:
+  Packet loss = 1
+  Buffer before leak = 10
+  Leaked = 3, Remaining = 7
+
+Enter packet size for time 4: 8
+Time 4:
+  Packet loss = 5
+  Buffer before leak = 10
+  Leaked = 3, Remaining = 7
+
+Time 5:
+  No new packets
   Leaked = 3, Remaining = 4
 
-Enter packet size for time 3: 8
-  Packet loss = 2
-  Buffer before leak = 10
-  Leaked = 3, Remaining = 7
+Time 6:
+  No new packets
+  Leaked = 3, Remaining = 1
 
-Enter packet size for time 4: 5
-  Packet loss = 2
-  Buffer before leak = 10
-  Leaked = 3, Remaining = 7
+Time 7:
+  No new packets
+  Leaked = 1, Remaining = 0
 
 ```
 
